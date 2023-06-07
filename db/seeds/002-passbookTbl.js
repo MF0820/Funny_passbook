@@ -11,7 +11,7 @@ exports.seed = async function (knex) {
       usage: "相続金",
       deposit: 46300000,
       drawer: 0,
-      amount: 46000000,
+      amount: 46300000,
       account_id: 1,
     },
     {

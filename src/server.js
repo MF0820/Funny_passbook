@@ -15,9 +15,11 @@ app.use(cors());
 // このミドルウェアが使われるときは、JSON.parseやJSON.stringifyをしなくてもよい。
 app.use(express.json());
 
-// 指定アカウントで登録されている情報を全て取得するAPI
-app.get("/allItems", async (req, res) => {
-  const allItems = await function () {
+// 指定アカウントで登録されている情報を取得するAPI
+app.get("/passbookInfo/:account_id", async (req, res) => {
+  const account_id = Number(req.params.account_id);
+  console.log(account_id);
+  const allItems = async function () {
     return knex
       .select({
         id: "id",
@@ -28,11 +30,17 @@ app.get("/allItems", async (req, res) => {
         amount: "amount",
         account_id: "account_id",
       })
-      .from("itemTbl");
+      .from("passbookTbl")
+      .where("account_id", account_id);
   };
   const result = await allItems();
-  // console.log("result:", result);
+  console.log("result:", result);
   res.send(result);
+});
+
+app.get("/", (req, res) => {
+  console.log("つながった");
+  res.send("つながった");
 });
 
 app.listen(PORT, () => {
