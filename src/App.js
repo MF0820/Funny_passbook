@@ -12,11 +12,14 @@ function App() {
   const [myPassbookView, setMyPassbookView] = useState(false);
   const [adminPageView, setAdminPageView] = useState(false);
 
+  const URL = "https://funny-passbook.onrender.com";
+  // const URL = "http://localhost:8080";
+
   //GET: accountを指定してpassbookの情報を取得する。
   const fetchPassbook = async () => {
     console.log(account);
     try {
-      const res = await fetch(`http://localhost:8080/passbookInfo/${account}`);
+      const res = await fetch(`${URL}/passbookInfo/${account}`);
       const data = await res.json();
       setPassbook(data);
       console.log(passbook);
