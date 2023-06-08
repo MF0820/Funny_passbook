@@ -14,8 +14,8 @@ function App() {
   const [adminPageView, setAdminPageView] = useState(false);
   const [amount, setAmount] = useState(0);
 
-  // const URL = "https://funny-passbook.onrender.com";
-  const URL = "http://localhost:8080";
+  const URL = "https://funny-passbook.onrender.com";
+  // const URL = "http://localhost:8080";
 
   //GET: 登録されているすべてのアカウントを取得する。
   const fetchAllAccount = async () => {
