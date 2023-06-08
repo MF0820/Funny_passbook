@@ -1,1 +1,66 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
 
+.navibar {
+  display: flex;
+  justify-content: center;
+}
+
+.navibar button {
+  width: 100px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+ul {
+  border: #527fe0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 200px;
+}
+
+th {
+  font-size: 150%;
+  background-color: #527fe0;
+  padding: 10px;
+  width: 150px;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 3px solid #000000;
+}
+td {
+  font-size: 100%;
+  background-color: #fff;
+  padding: 10px;
+  width: 150px;
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.adminTopBox {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+
+.adminTopBox > div {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

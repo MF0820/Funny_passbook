@@ -9,14 +9,14 @@ function App() {
   const [account, setAccount] = useState("1");
   const [passbook, setPassbook] = useState([]);
   const [promiseView, setPromiseView] = useState(false);
-  const [myPassbook, setMyPassbook] = useState(false);
-  const [adminPage, setAdminPage] = useState(false);
+  const [myPassbookView, setMyPassbookView] = useState(false);
+  const [adminPageView, setAdminPageView] = useState(false);
 
   //GET: accountを指定してpassbookの情報を取得する。
   const fetchPassbook = async () => {
     console.log(account);
     try {
-      const res = await fetch(`http://localhost:8080/passbookInfo/` + account);
+      const res = await fetch(`http://localhost:8080/passbookInfo/${account}`);
       const data = await res.json();
       setPassbook(data);
       console.log(passbook);
@@ -33,12 +33,12 @@ function App() {
     <div className="App">
       <Navbar
         setPromiseView={setPromiseView}
-        setMyPassbook={setMyPassbook}
-        setAdminPage={setAdminPage}
+        setMyPassbook={setMyPassbookView}
+        setAdminPage={setAdminPageView}
       />
       {promiseView && <PromisePage />}
-      {myPassbook && <MyPassbook passbook={passbook} />}
-      {adminPage && <AdminPage />}
+      {myPassbookView && <MyPassbook passbook={passbook} />}
+      {adminPageView && <AdminPage />}
     </div>
   );
 }

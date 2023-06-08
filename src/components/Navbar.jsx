@@ -27,7 +27,7 @@ export const Navbar = ({ setPromiseView, setMyPassbook, setAdminPage }) => {
       <div>
         <h1>貯めて楽しいおこづかい帳</h1>
       </div>
-      <div>
+      <div className="navibar">
         <button>口座作成</button>
         <button onClick={onClickPromisPage}>約束事</button>
         <button onClick={onClickMyPassbook}>自分の通帳</button>

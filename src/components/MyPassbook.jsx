@@ -3,17 +3,17 @@ import React from "react";
 export const MyPassbook = ({ passbook }) => {
   return (
     <>
-      <thead>
-        <tr>
-          <th>日付</th>
-          <th>名目</th>
-          <th>入金</th>
-          <th>出金</th>
-          <th>預金総額</th>
-        </tr>
-      </thead>
-      {passbook.map((el, index) => (
-        <table>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>名目</th>
+            <th>入金</th>
+            <th>出金</th>
+            <th>預金総額</th>
+          </tr>
+        </thead>
+        {passbook.map((el, index) => (
           <tbody>
             <tr key={el.id}>
               <td>
@@ -33,8 +33,8 @@ export const MyPassbook = ({ passbook }) => {
               </td>
             </tr>
           </tbody>
-        </table>
-      ))}
+        ))}
+      </table>
     </>
   );
 };

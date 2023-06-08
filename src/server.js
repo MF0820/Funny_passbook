@@ -2,10 +2,12 @@ const knex = require("./knex.js");
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const path = require("path");
 
 const PORT = 8080;
 
-app.use("/", express.static("../public"));
+// app.use("/", express.static("../public"));
+app.use(express.static(path.join(__dirname, "../build")));
 
 // ↓local環境で開発時ブラウザのセキュリティ機能により異なるオリジン間のリクエストが制限されている。
 // npm install corsでミドルウェアを入れ、以下のように使用することでエラーを回避できるそです。
@@ -41,6 +43,10 @@ app.get("/passbookInfo/:account_id", async (req, res) => {
 app.get("/", (req, res) => {
   console.log("つながった");
   res.send("つながった");
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
 });
 
 app.listen(PORT, () => {

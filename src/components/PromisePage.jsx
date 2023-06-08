@@ -2,9 +2,9 @@ import React from "react";
 
 export const PromisePage = () => {
   return (
-    <div>
+    <div className="promiseBox">
       <ul>
-        【約束事】
+        <label>【約束事】</label>
         <li>
           <p>帰ってきたら宿題と洗濯物取り込みをする。</p>
         </li>

@@ -31,7 +31,7 @@ TestResults.xml# See https://help.github.com/articles/ignoring-files/ for more a
 /coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
