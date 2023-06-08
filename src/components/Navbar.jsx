@@ -1,6 +1,14 @@
 import React from "react";
 
-export const Navbar = ({ setPromiseView, setMyPassbook, setAdminPage }) => {
+export const Navbar = ({
+  setPromiseView,
+  setMyPassbook,
+  setAdminPage,
+  allAccount,
+  account,
+  setAccount,
+  fetchPassbook,
+}) => {
   //約束事ボタンが押されたら約束事だけが表示される。
   const onClickPromisPage = () => {
     setPromiseView(true);
@@ -22,10 +30,22 @@ export const Navbar = ({ setPromiseView, setMyPassbook, setAdminPage }) => {
     setAdminPage(true);
   };
 
+  const onChangeAccount = (e) => {
+    setAccount(e.target.value);
+    console.log(account);
+  };
+
   return (
     <>
       <div>
         <h1>貯めて楽しいおこづかい帳</h1>
+        <div className="userSelect">
+          <select onChange={onChangeAccount}>
+            {allAccount.map((el) => (
+              <option value={el.id}>{el.name}</option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className="navibar">
         <button>口座作成</button>
